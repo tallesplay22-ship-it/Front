@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <main class="container">
+        <h1>Clientes</h1>
+        <h2 class="subtitulo">Front-end cosumindo API</h2>
+
+
+        <form id="form-busca">
+            <label for="cliente-id">Buscar cliente pelo ID</label>
+            <div class="linha">
+                <input id="cliente-id" type="number" min="1" placeholder="EX: 1" required>
+                <button type="submit">Buscar</button>
+                <button id="botao-todos" type="button" class="secundario">Mostrar Todos</button>
+            </div>
+        </form>
+
+        <p id="mensagem">Carregando clientes</p>
+        <section id="lista-clientes"></section>
+
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
