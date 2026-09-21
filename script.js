@@ -15,7 +15,7 @@ const botaoTodos = document.querySelector('#botao-todos')
 
 
 const enderecoApi = window.location.protocol === 'file:' ?
-    'http://172.17.0.1:3000' : ''
+    'http://192.168.2.116:3000' : ''
 
 function mostrarClientes(clientes) {
 
