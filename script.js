@@ -67,11 +67,34 @@ async function buscarClientes() {
     }
 }
 
+async function buscarClientePorId(id) {
+    mensagem.textContent = 'Buscando cliente...'
+    mensagem.classList.remove('erro')
+
+    try {
+        const resposta = await fetch(`${enderecoApi}/clientes/${id}`)
+        const dados = await resposta.json()
+
+        if (!resposta.ok) {
+            throw new Error(dados.erro || 'Não foi possível buscar o cliente.')
+        }
+
+        mostrarClientes([dados])
+        mensagem.textContent = 'Cliente encontrado.'
+    }
+    catch (erro) {
+        listaClientes.innerHTML = ''
+        mensagem.textContent = erro.message
+        mensagem.classList.add('erro')
+    }
+}
+
+
 formBusca.addEventListener('submit', (evento) => {
     evento.preventDefault()
 
     if (inputId.value) {
-        buscarClientesPorId(inputId.value)
+        buscarClientePorId(inputId.value)
     }
 })
 
