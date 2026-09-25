@@ -1,33 +1,50 @@
+<!-- Informa ao navegador que este documento usa HTML5. -->
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<!-- Inicia o HTML e informa que o conteúdo está em português do Brasil. -->
+<html lang="pt-BR">
+<!-- Guarda configurações da página que não aparecem no conteúdo. -->
 <head>
+    <!-- Permite exibir corretamente acentos e caracteres especiais. -->
     <meta charset="UTF-8">
+    <!-- Adapta a largura da página à tela de celulares e computadores. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
+    <!-- Define o texto mostrado na aba do navegador. -->
+    <title>Cadastro de clientes</title>
+    <!-- Conecta o arquivo de estilos CSS a esta página. -->
     <link rel="stylesheet" href="style.css">
 </head>
-
+<!-- Inicia todo o conteúdo visível da página. -->
 <body>
+    <!-- Representa o conteúdo principal e recebe a classe usada no CSS. -->
     <main class="container">
+        <!-- Título principal da página. -->
         <h1>Clientes</h1>
-        <h2 class="subtitulo">Front-end consumindo API</h2>
-        <div class="linha">2 div</div>
+        <!-- Texto complementar exibido abaixo do título. -->
+        <p class="subtitulo">Front-end consumindo a nossa API</p>
 
+        <!-- Formulário usado para pesquisar um cliente. -->
         <form id="form-busca">
+            <!-- Descreve o campo e se conecta a ele pelo atributo for. -->
             <label for="cliente-id">Buscar cliente pelo ID</label>
+            <!-- Agrupa o campo e os botões para organizá-los na mesma linha. -->
             <div class="linha">
-                <input id="cliente-id" type="number" min="1" placeholder="EX: 1" required>
+                <!-- Recebe somente números a partir de 1 e exige preenchimento. -->
+                <input id="cliente-id" type="number" min="1" placeholder="Ex.: 1" required>
+                <!-- type submit envia o formulário. -->
                 <button type="submit">Buscar</button>
-                <button id="botao-todos" type="button" class="secundario">Mostrar Todos</button>
+                <!-- type button cria um botão comum que não envia o formulário. -->
+                <button id="botao-todos" type="button" class="secundario">Mostrar todos</button>
+            
             </div>
         </form>
 
-        <p id="mensagem">Carregando clientes</p>
-        <section id="lista-clientes"></section>
-
+        <!-- Exibe mensagens; aria-live faz leitores de tela anunciarem alterações. -->
+        <p id="mensagem" aria-live="polite">Carregando clientes...</p>
+        <!-- Começa vazio e recebe pelo JavaScript os cards dos clientes. -->
+        <section id="lista-clientes" class="lista"></section>
     </main>
+
+    <!-- Carrega o JavaScript depois que todos os elementos HTML foram criados. -->
     <script src="script.js"></script>
 </body>
-
 </html>

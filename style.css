@@ -1,10 +1,151 @@
+/* Seleciona todos os elementos da página. */
 * {
+    /* Inclui padding e borda no cálculo da largura e da altura. */
     box-sizing: border-box;
 }
 
+/* Define os estilos gerais do corpo da página. */
 body {
+    /* Remove a margem que o navegador adiciona por padrão. */
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #f1f1f1;
-    background-color: #222;
+    /* Usa Arial e, se ela não existir, qualquer fonte sem serifa. */
+    font-family: Arial, sans-serif;
+    /* Define a cor padrão dos textos. */
+    color: #222;
+    /* Define a cor de fundo da página. */
+    background: #f1f5f9;
 }
+
+/* Seleciona o elemento que possui a classe container. */
+.container {
+    /* Usa no máximo 800px, mas ocupa 90% em telas pequenas. */
+    width: min(800px, 90%);
+    /* Cria espaço vertical e centraliza o container horizontalmente. */
+    margin: 40px auto;
+}
+
+/* Estiliza o título principal. */
+h1 {
+    /* Deixa apenas 4px de espaço abaixo do título. */
+    margin-bottom: 4px;
+    /* Deixa o texto azul. */
+    color: #1d4ed8;
+}
+
+/* Estiliza o elemento que possui a classe subtitulo. */
+.subtitulo {
+    /* Remove a margem superior padrão do parágrafo. */
+    margin-top: 0;
+    /* Deixa o texto cinza. */
+    color: #64748b;
+}
+
+/* Compartilha os mesmos estilos entre o formulário e cada card. */
+form,
+.cliente {
+    /* Cria espaço dentro dos elementos. */
+    padding: 20px;
+    /* Arredonda os cantos. */
+    border-radius: 8px;
+    /* Define fundo branco. */
+    background: white;
+    /* Adiciona uma sombra suave. */
+    box-shadow: 0 2px 8px #00000012;
+}
+
+/* Estiliza o texto que identifica o campo. */
+label {
+    /* Faz o label ocupar uma linha inteira. */
+    display: block;
+    /* Separa o label do campo. */
+    margin-bottom: 8px;
+    /* Deixa o texto em negrito. */
+    font-weight: bold;
+}
+
+/* Organiza campo e botões. */
+.linha {
+    /* Ativa o Flexbox. */
+    display: flex;
+    /* Cria espaço entre os elementos. */
+    gap: 8px;
+    /* Permite a quebra para outra linha em telas pequenas. */
+    flex-wrap: wrap;
+}
+
+/* Compartilha estilos entre campos e botões. */
+input,
+button {
+    /* Cria espaço interno vertical e horizontal. */
+    padding: 10px 12px;
+    /* Adiciona uma borda cinza clara. */
+    border: 1px solid #cbd5e1;
+    /* Arredonda os cantos. */
+    border-radius: 5px;
+    /* Define o tamanho da fonte. */
+    font-size: 1rem;
+}
+
+/* Estiliza somente o campo de entrada. */
+input {
+    /* Faz o campo ocupar o espaço restante da linha. */
+    flex: 1;
+    /* Impede que ele fique estreito demais. */
+    min-width: 150px;
+}
+
+/* Estiliza todos os botões. */
+button {
+    /* Deixa a borda azul. */
+    border-color: #2563eb;
+    /* Deixa o texto branco. */
+    color: white;
+    /* Deixa o fundo azul. */
+    background: #2563eb;
+    /* Mostra a mãozinha ao passar o mouse. */
+    cursor: pointer;
+}
+
+/* Aplica o estilo enquanto o mouse está sobre um botão. */
+button:hover {
+    /* Escurece o azul do fundo. */
+    background: #1d4ed8;
+}
+
+/* Estiliza apenas o botão com a classe secundario. */
+button.secundario {
+    /* Deixa o texto azul. */
+    color: #2563eb;
+    /* Deixa o fundo branco. */
+    background: white;
+}
+
+/* Organiza a lista que recebe os cards. */
+.lista {
+    /* Ativa o CSS Grid. */
+    display: grid;
+    /* Cria espaço entre os cards. */
+    gap: 12px;
+}
+
+/* Estiliza o h2 que está dentro de um card. */
+.cliente h2 {
+    /* Remove as margens, mantendo 10px somente embaixo. */
+    margin: 0 0 10px;
+    /* Deixa o título um pouco maior que o texto comum. */
+    font-size: 1.2rem;
+}
+
+/* Estiliza os parágrafos que estão dentro dos cards. */
+.cliente p {
+    /* Cria margem vertical e remove a margem lateral. */
+    margin: 5px 0;
+}
+
+/* Seleciona a mensagem quando ela recebe também a classe erro. */
+#mensagem.erro {
+    /* Exibe a mensagem de erro em vermelho. */
+    color: #b91c1c;
+}
+
+
