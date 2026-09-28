@@ -36,7 +36,7 @@ function mostrarClientes(clientes) {
         // Cria um parágrafo para o ID.
         const id = document.createElement('p')
         // Junta o texto "ID" ao valor recebido da API.
-        id.textContent = `ID: ${cliente.id}`
+        id.textContent = `ID: ${cliente._id}`
 
         // Cria um parágrafo para o e-mail.
         const email = document.createElement('p')
@@ -105,7 +105,7 @@ async function buscarClientePorId(id) {
     // O try tenta executar a requisição.
     try {
         // Faz um GET incluindo o ID digitado no final da URL.
-        const resposta = await fetch(`${enderecoApi}/clientes/${id}`)
+        const resposta = await fetch(`${enderecoApi}/produtos/${id}`)
         // Converte a resposta JSON em um objeto JavaScript.
         const dados = await resposta.json()
 
