@@ -48,9 +48,9 @@ function mostrarClientes(clientes) {
         // Mostra a idade ou um texto alternativo se ela não existir.
         idade.textContent = `Categoria: ${cliente.categoria || 'Não informada'}`
 
-             const estoque = document.createElement('p')
+        const estoque = document.createElement('p')
         // Mostra a idade ou um texto alternativo se ela não existir.
-        idade.textContent = `Estoque: ${cliente.estoque || 'Não informada'}`
+        estoque.textContent = `Estoque: ${cliente.estoque || 'Não informada'}`
 
         // Coloca o título e os parágrafos dentro do card.
         card.append(titulo, id, email, idade,  estoque)
